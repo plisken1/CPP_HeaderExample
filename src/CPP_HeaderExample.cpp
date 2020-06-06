@@ -1,9 +1,9 @@
 //============================================================================
 // Name        : CPP_HeaderExample.cpp
 // Author      : Harry Nisbet
-// Version     : 1.1
+// Version     : 1.2
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : An example of creating and using a Header
 //============================================================================
 
 #include <iostream>
