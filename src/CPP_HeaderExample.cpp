@@ -1,7 +1,7 @@
 //============================================================================
 // Name        : CPP_HeaderExample.cpp
 // Author      : Harry Nisbet
-// Version     :
+// Version     : 1.1
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
 //============================================================================
