@@ -1,43 +1,52 @@
 /*
- * Utilities.h
+ * Utilities Harry Nisbet
+ * Initial Version 08/09/2020.
+ * Version: 1.1
  *
- *  Created on: 6 Jun 2020
- *      Author: plisken
- *      Version: 1.1
  */
 
-#ifndef UTILITIES_H_
-#define UTILITIES_H_
+#ifndef UTILITIES_UTILITIES_H
+#define UTILITIES_UTILITIES_H
 #include <iostream>
-using namespace std;
+#include <fstream>
 
-string getInput(string text, bool newLine=false)
+extern std::string version;
+
+
+void writeLog(std::string fileName, std::string  message, bool append=true)
 {
-	string answer;
-	if (newLine)
-	{
-		cout << text<<endl;
-	}
-	else
-	{
-		cout << text;
-	}
-	cin >> answer;
-	return answer;
-}
-void print(string text, bool newLine=false)
-{
-	if (newLine)
-	{
-		cout << text<< endl;
-	}
-	else
-	{
-		cout << text;
-	}
+    if (append)
+    {
+        std::ofstream logFile(fileName,std::ios::app);
+        logFile << message << std::endl;
+        logFile.close();
+    }
+    else
+    {
+        std::ofstream logFile(fileName);
+        logFile << message << std::endl;;
+        logFile.close();
+    }
+
 }
 
+void print(std::string text, bool newLine=true)
+{
+    if (newLine)
+    {
+        std::cout << text<< std::endl;
+    }
+    else
+    {
+        std::cout << text;
+    }
+}
 
+void sendEmail(std::string to, std::string from, std::string subject,
+               std::string message, std::string IP)
+{
+    //const char* charArray = to.c_str();
+    //printf("%s\n",charArray);
+}
 
-
-#endif /* UTILITIES_H_ */
+#endif //UTILITIES_UTILITIES_H
