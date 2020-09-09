@@ -15,18 +15,18 @@ extern std::string version;
 
 void writeLog(std::string fileName, std::string  message, bool append=true)
 {
+    std::fstream logFile;
     if (append)
     {
-        std::ofstream logFile(fileName,std::ios::app);
+        logFile.open(fileName.c_str(),std::ios::app);
         logFile << message << std::endl;
-        logFile.close();
     }
     else
     {
-        std::ofstream logFile(fileName);
+        logFile.open(fileName.c_str());
         logFile << message << std::endl;;
-        logFile.close();
     }
+    logFile.close();
 
 }
 
