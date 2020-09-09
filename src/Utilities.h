@@ -1,7 +1,7 @@
 /*
  * Utilities Harry Nisbet
  * Initial Version 08/09/2020.
- * Version: 1.1
+ * Version: 1.2
  *
  */
 
@@ -41,11 +41,18 @@ void print(std::string text, bool newLine=true)
     }
 }
 
-void sendEmail(std::string to, std::string from, std::string subject,
+/*void sendEmail(std::string to, std::string from, std::string subject,
                std::string message, std::string IP)
 {
     //const char* charArray = to.c_str();
     //printf("%s\n",charArray);
+}*/
+void sendEmail(std::string address, std::string message)
+{
+
+    char cmd[2000];
+    sprintf(cmd, "sendEmail -t %s -u \"Missing Stamping Details\" -m \"%s\" -s 172.16.1.140 -f harry.nisbet@libertysteelgroup.com", address.c_str(), message.c_str());
+    system(cmd);
 }
 
 #endif //UTILITIES_UTILITIES_H
