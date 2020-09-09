@@ -18,16 +18,15 @@ void writeLog(std::string fileName, std::string  message, bool append=true)
     std::fstream logFile;
     if (append)
     {
-        logFile.open(fileName.c_str(),std::ios::app);
+        logFile.open(fileName.c_str(),std::fstream::out | std::fstream::app );
         logFile << message << std::endl;
     }
     else
     {
-        logFile.open(fileName.c_str());
+        logFile.open(fileName.c_str(),std::fstream::out);
         logFile << message << std::endl;;
     }
     logFile.close();
-
 }
 
 void print(std::string text, bool newLine=true)
